@@ -2,6 +2,9 @@
 $( document ).ready( onReady );
 
 let employeeInfo = [];
+let totalSalary = 0;
+
+
 
 function addEmployee () {
     // capture employee ino
@@ -18,7 +21,23 @@ function addEmployee () {
     employeeInfo.push( newEmployee );
     // display employee info
     displayEmployeeInfo();
+    addCosts(newEmployee.salary);
+
 }
+
+function addCosts (salary) {
+    console.log( 'in add costs' );
+    let ell = $( '#costOut' );
+    //empty element
+    ell.empty();
+    salary = Number(salary);
+    totalSalary += salary;
+    //  add up employees salaries
+   
+        ell.append(`'salary' + ${totalSalary}`)
+    }
+
+
 
 function onReady() {
     $( '#addEmployee' ).on( 'click', addEmployee)
@@ -37,3 +56,4 @@ function displayEmployeeInfo() {
     }// end for
     
 }
+
