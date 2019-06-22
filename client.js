@@ -47,7 +47,7 @@ function addCosts (salary) {
 
 function onReady() {
     $( '#addEmployee' ).on( 'click', addEmployee);
-    $( '#deleteEmployee' ).on('click', fireEmployee);
+    $( '#employeeOut' ).on('click', '.deleteEmployee', fireEmployee);
 }
 
 function displayEmployeeInfo() {
@@ -59,12 +59,14 @@ function displayEmployeeInfo() {
     for (let i=0; i<employeeInfo.length; i++){
         //append each item to DOM
         el.append(`<li>${employeeInfo[i].firstName} ${employeeInfo[i].lastName} ${employeeInfo[i].employeeId} 
-        ${employeeInfo[i].jobTitle} ${employeeInfo[i].salary}...${employeeInfo[i].firstName}, <button id="deleteEmployee">Can I have a word with you in my office...</button></li>`)
+    ${employeeInfo[i].jobTitle} ${employeeInfo[i].salary} <button class="deleteEmployee">Delete</button></li>`)
     }// end for   
+    fireEmployee();
 }
 
-function fireEmployee () {
-    console.log('Were gonna have to let you go...')
+function fireEmployee (event) {
+    console.log('Were gonna have to let you go...', $(this).parent().text());
+    $(this).parent().remove();
 }
 
 function costCheck () {
