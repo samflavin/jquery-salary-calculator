@@ -61,12 +61,13 @@ function displayEmployeeInfo() {
         el.append(`<li>${employeeInfo[i].firstName} ${employeeInfo[i].lastName} ${employeeInfo[i].employeeId} 
     ${employeeInfo[i].jobTitle} ${employeeInfo[i].salary} <button class="deleteEmployee">Delete</button></li>`)
     }// end for   
-    fireEmployee();
+    
 }
 
 function fireEmployee (event) {
     console.log('Were gonna have to let you go...', $(this).parent().text());
     $(this).parent().remove();
+    // Loop employeeInfo to remove selected itemfrom array
 }
 
 function costCheck () {
@@ -75,7 +76,14 @@ function costCheck () {
     let currentCost = totalSalary;
     if ( currentCost > 20000 ){
         console.log('ABORT MISSION!')
+        // Change text color
+        changeColor();
+        
     }
 
 }
 
+function changeColor (){
+    let elem = $( '#costOut' );
+    elem.addClass('red');
+}
