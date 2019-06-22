@@ -22,6 +22,7 @@ function addEmployee () {
     // display employee info
     displayEmployeeInfo();
     addCosts(newEmployee.salary);
+    costCheck();
 
 }
 
@@ -31,10 +32,10 @@ function addCosts (salary) {
     //empty element
     ell.empty();
     salary = Number(salary);
-    totalSalary += salary;
+    totalSalary += (salary/12);
     //  add up employees salaries
    
-        ell.append(`'salary' + ${totalSalary}`)
+        ell.append(`Total Monthly Cost: $${totalSalary}`)
     }
 
 
@@ -55,5 +56,15 @@ function displayEmployeeInfo() {
         ${employeeInfo[i].jobTitle} ${employeeInfo[i].salary}</li>`)
     }// end for
     
+}
+
+function costCheck () {
+    console.log('in costCheck function');
+    //get value of total cost and check that it's less than 20,000
+    let currentCost = totalSalary;
+    if ( currentCost > 10 ){
+        console.log('ABORT MISSION!')
+    }
+
 }
 
