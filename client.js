@@ -52,7 +52,7 @@ function onReady() {
 
 function displayEmployeeInfo() {
     console.log( 'in displayEmployeeInfo')
-    let el = $( '#employeeOut' );
+    let el = $( '.employeeOut' );
     //empty element
     el.empty();
     //loop through employeeInfo array
@@ -68,6 +68,7 @@ function fireEmployee (event) {
     console.log('Were gonna have to let you go...', $(this).parent().text());
     $(this).parent().remove();
     // Loop employeeInfo to remove selected itemfrom array
+    
 }
 
 function costCheck () {
