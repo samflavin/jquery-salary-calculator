@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="client.js"></script>
     <title>Document</title>
 </head>
-<body>
-    <h1>1st Weekend Challange</h1>
+
+<body id="body">
+    <h1 class="h1">Salary Calculator</h1>
     <div id="inputDiv">
         <input type="text" placeholder="First Name" id="firstNameIn">
         <input type="text" placeholder="Last Name" id="lastNameIn">
@@ -20,30 +22,37 @@
         <input type="number" placeholder="Salary" id="salaryIn">
         <button id="addEmployee">Submit</button>
     </div>
-    <div id="outputDiv">
-        <h1>Employees:</h1>
-        <!--<ul id="employeeOut">-->
-            <table style="background-color:lavender" style="100%">
-            <tr>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Employee ID#</th>
-                <th scope="col">Job Title</th>
-                <th scope="col">Salary</th>
-            </tr>
-            <tr>
-                <td class="employeeOut"></td>
-                
-            </tr>
+    <section id="employeeTableOut" class="container">
+        <table class="table">
+            <thead class="header">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Salary</th>
+            </thead>
+            <tbody id="employeeOut" class="tBody-Data">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+
+
 
         </table>
-    </div>
+    </section>
+
     <div id="costOutputDiv">
-        <h1>$$$$$$:</h1>
+        <h1>$$$:</h1>
         <ul id="costOut">
 
         </ul>
     </div>
-    
+
 </body>
+
 </html>
